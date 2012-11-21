@@ -2,6 +2,7 @@ require "tictactoe-game/version"
 
 #-------------------------------------------------------------------------------
 module TicTacToe
+
   module SquaresContainer
     def []( index ) @squares[index] end
 
@@ -140,10 +141,11 @@ module TicTacToe
       end
       move.chomp
     end
+
     
+
     def finish( final_board )
-      print final_board
-      
+      print final_board      
       if final_board.won? == @mark
         print "Congratulations, you win.\n\n"
       elsif final_board.won? == " "
@@ -152,7 +154,20 @@ module TicTacToe
         print "You lost tic-tac-toe?!\n\n"
       end
     end
+
     
+
+    def finish_pruebas( final_board )
+      if final_board.won? == @mark
+        "Congratulations, you win.\n\n"
+      elsif final_board.won? == " "
+        "Tie game.\n\n"
+      else
+        "You lost tic-tac-toe?!\n\n"
+      end
+    end
+
+
   end
 end
 
